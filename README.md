@@ -2,9 +2,9 @@
 <img alt="Website" src="https://img.shields.io/website?color=blue&down_color=red&down_message=offline&label=heckfree&logo=heckfree&style=for-the-badge&up_color=green&up_message=live&url=https%3A%2F%2Fheckfree.herokuapp.com">
 <hr />
 
-[![GitHub forks](https://img.shields.io/github/forks/heysujal/heck.free?style=social&label=Fork&maxAge=2592000)](https://github.com/heysujal/heck.free)
-[![GitHub stars](https://img.shields.io/github/stars/heysujal/heck.free?style=social&label=Star&maxAge=2592000)](https://github.com/heysujal/heck.free)
-[![GitHub watchers](https://img.shields.io/github/watchers/heysujal/heck.free?style=social&label=Watch&maxAge=2592000)](https://github.com/heysujal/heck.free)
+[![GitHub forks](https://img.shields.io/github/forks/heysujal/heck.free?style=social&label=Fork&maxAge=2592000)](https://github.com/threefreespirited/heckfree)
+[![GitHub stars](https://img.shields.io/github/stars/heysujal/heck.free?style=social&label=Star&maxAge=2592000)](https://github.com/threefreespirited/heckfree)
+[![GitHub watchers](https://img.shields.io/github/watchers/heysujal/heck.free?style=social&label=Watch&maxAge=2592000)](https://github.com/threefreespirited/heckfree)
 
 <h3 style="text-align:center;color:yellow;font-size:1.8rem;">Share One and Connect with Many</h3>
 <p style="text-align:center;font-size:1.5rem;">The only link you will ever need</p>
