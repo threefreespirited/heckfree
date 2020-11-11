@@ -1,0 +1,539 @@
+<%- include('header'); -%>
+
+<!-- form -->
+<div class="myContainer">
+
+    <p style="font-size: 2.1rem; text-align: center;margin: 0;">
+        Create your account
+    </p>
+
+    <div class="ui ordered steps mySteps">
+        <div class="active step formSteps">
+            <div class="content">
+                <div class="title">Basic Details</div>
+                <div class="description">Choose your Username</div>
+
+            </div>
+        </div>
+        <div class="step formSteps">
+            <div class="content">
+                <div class="title">Interests</div>
+                <div class="description">Choose area of interests</div>
+            </div>
+        </div>
+        <div class="step formSteps">
+            <div class="content">
+                <div class="title">Confirm</div>
+                <div class="description">Verify details</div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <form class="ui form info" action="/register" method="POST">
+            <div class="first-step">
+                <div class="field required">
+                    <label>Email</label>
+                    <input type="email" value="" id="email" name="email" placeholder="Enter Your Email" required />
+                </div>
+
+                <div id="emailWarning"> </div>
+
+                <%  let passedUsername="" ;
+                    if(customLink){
+                    passedUsername = customLink;
+                    }
+                %>
+
+                <div class="field required">
+                    <label>Username (min. 3 characters)</label>
+                    <input type="text" id="userName" value="<%= passedUsername %>" minlength="2" maxlength="12"
+                     style="text-transform: lowercase;"  name="username" placeholder="Enter Username" required />
+                </div>
+                <div id="usernameWarning"> </div>
+                <div class="ui form" id="passDiv">
+                    <div class="field required commonPass">
+                        <label>Password</label>
+                        <input type="password" id="pass" value="" name="password" placeholder="Enter Password"
+                            required />
+                    </div>
+                    <div class="field required commonPass">
+                        <label>Confirm Password</label>
+                        <input type="password" id="confirmpass" value="" name="confirmPassword"
+                            placeholder="Re-enter Password" required />
+
+                    </div>
+
+                    <div id="passStrongWarning"></div>
+                    <div style="margin-top: 10px;" id="passMatchWarning"></div>
+                    <div id="incompleteWarning"></div>
+                </div>
+            </div>
+
+
+            <!--2nd Step -->
+            <div class="second-step">
+                <div class="field required">
+                    <label>Fullname</label>
+                    <input type="text" id="fullName" name="fullname" value="" placeholder="Enter Your FullName"
+                        required />
+                </div>
+                <div class="Your Interests">
+                    <div class="field required">
+                        <label>Tell us about yourself</label>
+
+                        <!-- Tags to select form -->
+                        <div id="interestTags">
+                            <div class="ui label myTags" type="button">
+                                <i class="write icon"></i>
+                                <input type="text" value="false" class="intInput" name="writing" id="writing"
+                                    style="display: none;">
+                                Writing
+                            </div>
+                            <div class="ui label myTags">
+                                <i class="photo video icon"></i>
+                                <input type="text" value="false" class="intInput" name="creative" id="creative"
+                                    style="display: none;">
+                                Creative
+                            </div>
+                            <div class="ui label myTags">
+                                <i class="university icon"></i>
+                                <input type="text" value="false" class="intInput" name="education" id="education"
+                                    style="display: none;">
+                                Education
+                            </div>
+                            <div class="ui label myTags">
+                                <i class="pencil ruler icon"></i>
+                                <input type="text" value="false" class="intInput" name="arts" id="arts"
+                                    style="display: none;">
+                                Arts/Entertainment
+                            </div>
+                            <div class="ui label myTags">
+                                <i class="business time icon"></i>
+                                <input type="text" value="false" class="intInput" name="brand" id="brand"
+                                    style="display: none;">
+                                Brand
+                            </div>
+                            <div class="ui label myTags">
+                                <i class="user tie icon"></i>
+                                <input type="text" value="false" class="intInput" name="influencer" id="influencer"
+                                    style="display: none;">
+                                Influencer
+                            </div>
+                            <div class="ui label myTags">
+                                <i class="tshirt icon"></i>
+                                <input type="text" value="false" class="intInput" name="fashion" id="fashion"
+                                    style="display: none;">
+                                Fashion/Beauty
+                            </div>
+                            <div class="ui label myTags">
+                                <i class="terminal icon"></i>
+                                <input type="text" value="false" class="intInput" name="programming" id="programming"
+                                    style="display: none;">
+                                Programming
+                            </div>
+                            <div class="ui label myTags">
+                                <i class="laptop code icon"></i>
+                                <input type="text" value="false" class="intInput" name="webdevelopment"
+                                    id="webdevelopment" style="display: none;">
+                                Web Development
+                            </div>
+                            <div class="ui label myTags">
+                                <i class="music icon"></i>
+                                <input type="text" value="false" class="intInput" name="music" id="music"
+                                    style="display: none;">
+                                Music
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--3rd Step -->
+            <div class="third-step">
+
+                <div class="Your Interests">
+
+                    <div class="ui checkbox field">
+
+                        <input type="checkbox" tabindex="0" class="hidden" required />
+                        <label>I hereby agree to all <a href="/terms">Terms and Conditions</a> of HeckFree</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="ui submit button submitBtn" style="float: right">
+                Save Details
+            </button>
+
+        </form>
+        <div style="margin: 40px 0">
+            <button type="button" class="ui button prev">Back</button>
+            <button type="button" class="ui button continue" style="float: right;">
+                Continue
+            </button>
+        </div>
+    </div>
+
+    <div class="ui bottom attached warning message" style="text-align: center;">
+        <i class="icon help"></i>
+        Already signed up? <a href="/h/login">Login here</a> instead.
+    </div>
+
+</div>
+
+<!-- form ends -->
+
+
+
+<%- include('footer'); -%>
+
+
+<script>
+
+  // jQuery code to display a toast message on recieving message through res.render
+    $(document).ready(function () {
+        // fix menu when passed
+        $(".mySteps").visibility({
+            once: false,
+            onBottomPassed: function () {
+                $(".fixed.menu").transition("fade in");
+            },
+            onBottomPassedReverse: function () {
+                $(".fixed.menu").transition("fade out");
+            },
+        });
+    });
+
+    // jQuery code for checkbox
+    $(".ui.checkbox").checkbox();
+
+    // JS code to match passwords and check if password is strong enough
+
+    let password1 = document.getElementById("pass");
+    let passStrongWarning = document.getElementById("passStrongWarning");
+    let passMatchWarning = document.getElementById("passMatchWarning");
+    let password2 = document.getElementById("confirmpass");
+    const passField = document.querySelectorAll(".commonPass");
+
+    password1.addEventListener("keyup", () => {
+        checkPassword();
+    });
+    password2.addEventListener("keyup", () => {
+        checkPassword();
+    });
+
+    const next = document.querySelector(".continue");
+    const previous = document.querySelector(".prev");
+
+    function checkPassword() {
+        if (password1.value.length != 0) {
+            // If password is 8 digits
+            if (password1.value.length >= 8) {
+                passMatch();
+                passStrongWarning.innerHTML = `
+                    <div class="ui positive message">
+                        <div class="header">Password is strong enough</div>
+                    </div>`
+                    ;
+            }
+
+            // If confirm password is not 8 digits
+            else if (password1.value.length < 8) {
+                passMatch();
+                passStrongWarning.innerHTML = `
+                <div class="ui negative message">
+                    <div class="header">Password not strong enough</div>
+                    </div>`
+                    ;
+
+            }
+        }
+    }
+
+    function passMatch() {
+        if (password1.value.length != 0) {
+            // If Not same return False.     
+            if (password1.value == password2.value) {
+                // alert("Password Match: Welcome!") 
+                passField[0].classList.add("success");
+                passField[1].classList.add("success");
+                passField[0].classList.remove("error");
+                passField[1].classList.remove("error");
+                passMatchWarning.innerHTML = `
+                    <div class="ui positive message">
+                        <div class="header">Passwords match</div>
+                    </div>`
+                    ;
+                next.classList.remove("disabled");
+                return true;
+            }
+
+            // If same return True. 
+            else {
+                // alert ("\nPassword did not match: Please try again...") 
+                passField[0].classList.add("error");
+                passField[1].classList.add("error");
+                passField[0].classList.remove("success");
+                passField[1].classList.remove("success");
+                passMatchWarning.innerHTML = `
+                    <div class="ui negative message">
+                        <div class="header">Passwords do not match</div>
+                    </div>`
+                    ;
+                next.classList.add("disabled");
+                return false;
+            }
+        }
+    }
+
+    // JS code to change states from active/completed to reverse on formSteps 
+    
+    const formSteps = document.querySelectorAll(".formSteps");
+    const username = document.querySelector("#userName");
+    const fullname = document.querySelector("#fullName");
+    const email = document.querySelector("#email");
+    const incompleteWarning = document.querySelector("#incompleteWarning");
+    let count = 1;
+
+    const submitBtn = document.querySelector(".submitBtn");
+    const firstStep = document.querySelector(".first-step");
+    const secondStep = document.querySelector(".second-step");
+    const thirdStep = document.querySelector(".third-step");
+
+    const emailWarning = document.querySelector("#emailWarning");
+    emailWarning.style.display = "none";
+    console.log(next);
+
+    let valResult = "";
+    if (count == 1) {
+        formSteps[0].classList.remove("completed");
+        formSteps[0].classList.add("active");
+        formSteps[1].classList.remove("active");
+        formSteps[2].classList.remove("active");
+        incompleteWarning.style.display = "none";
+        submitBtn.style.display = "none";
+
+    }
+
+    email.addEventListener("keyup", () => {
+        valResult = ValidateEmail(email);
+    })
+
+    next.addEventListener("click", () => {
+        console.log(count);
+
+        if (count < 2) {
+            if (valResult == false) {
+                emailWarning.style.display = "block";
+                emailWarning.innerHTML = `
+                                <div class="ui negative message">
+                                    <div class="header">Invalid email</div>
+                                    </div>`;
+            }
+            else if (valResult == true) {
+                emailWarning.style.display = "none";
+                ++count;
+            }
+        }
+        else {
+            ++count;
+        }
+
+
+        if (count == 2) {
+
+
+            if (username.value != "" && email.value != "" && password1.value != "" && password2.value != "") {
+                console.log("checking")
+                secondStep.style.display = "block";
+                firstStep.style.display = "none";
+                thirdStep.style.display = "none";
+
+                formSteps[0].classList.remove("completed");
+                formSteps[0].classList.remove("active");
+                formSteps[1].classList.add("active");
+                formSteps[2].classList.remove("active");
+                submitBtn.style.display = "none";
+                next.style.display = "block";
+                incompleteWarning.style.display = "none";
+            }
+            else {
+                count = 1;
+                incompleteWarning.style.display = "block";
+                incompleteWarning.innerHTML = `
+                    <div class="ui negative message">
+                        <div class="header">Complete the form first</div>
+                        </div>`;
+            }
+
+        }
+        else if (count == 3) {
+            if (fullname.value != "") {
+                thirdStep.style.display = "block";
+                firstStep.style.display = "none";
+                secondStep.style.display = "none";
+                formSteps[0].classList.add("completed");
+                formSteps[0].classList.remove("active");
+                formSteps[1].classList.add("completed");
+                formSteps[1].classList.remove("active");
+                formSteps[2].classList.add("active");
+                submitBtn.style.display = "block";
+                next.style.display = "none";
+            }
+            else {
+                count = 2;
+                incompleteWarning.innerHTML = `
+                    <div class="ui positive message">
+                        <div class="header">You complete the first step</div>
+                    </div>`;
+            }
+        } else if (count > 3) {
+            count = 3;
+        }
+    });
+
+    submitBtn.style.display = "none";
+    previous.addEventListener("click", () => {
+        console.log("previous" + count);
+
+        --count;
+        if (count == 1) {
+            firstStep.style.display = "block";
+            secondStep.style.display = "none";
+            thirdStep.style.display = "none";
+            formSteps[0].classList.remove("completed");
+            formSteps[0].classList.add("active");
+            formSteps[1].classList.remove("active");
+            formSteps[2].classList.remove("active");
+            submitBtn.style.display = "none";
+            next.style.display = "block";
+        } else if (count == 2) {
+            secondStep.style.display = "block";
+            firstStep.style.display = "none";
+            thirdStep.style.display = "none";
+            formSteps[1].classList.remove("completed");
+            formSteps[1].classList.add("active");
+            formSteps[1].classList.remove("active");
+            formSteps[2].classList.remove("active");
+            submitBtn.style.display = "none";
+            next.style.display = "block";
+        }
+        else if (count == 3) {
+            thirdStep.style.display = "block";
+            firstStep.style.display = "none";
+            secondStep.style.display = "none";
+            formSteps[2].classList.add("active");
+            formSteps[2].classList.remove("completed");
+            formSteps[0].classList.remove("active");
+            formSteps[1].classList.remove("active");
+            submitBtn.style.display = "block";
+            next.style.display = "none";
+        }
+        else if (count < 1) {
+            count = 1;
+        }
+    });
+
+
+    // JS code for setting input fields for Interest tags
+
+    const myTags = document.querySelectorAll(".myTags");
+    const intInput = document.querySelectorAll(".intInput");
+
+    for (let i = 0; i < myTags.length; i++) {
+
+        myTags[i].addEventListener("click", () => {
+
+
+            if (myTags[i].classList.contains("selectedColor")) {
+                myTags[i].classList.remove("selectedColor");
+                intInput[i].value = "false";
+            }
+            else {
+                myTags[i].classList.add("selectedColor");
+                intInput[i].value = "true";
+            }
+        });
+
+
+    }
+
+    // JS code for validating email
+
+    function ValidateEmail(email) {
+        var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (email.value.match(mailformat)) {
+            // alert("Valid email address!");
+            return true;
+        }
+        else {
+            // alert("You have entered an invalid email address!");
+            return false;
+        }
+    }
+
+    
+    // JS for warning for already taken username
+
+    const userWarning = document.getElementById("userWarning");
+    username.addEventListener("keyup", () => {
+        
+        if (username.value != "") {
+            usernameWarn();
+            convertLowerCase();
+        }
+        else {
+            usernameWarning.innerHTML = `
+            <div class="ui negative message">
+                <div class="header">Enter Username</div>
+                </div>`;
+            }
+        })
+        document.querySelector(".myContainer").addEventListener("mouseover", () => {
+            usernameWarn();
+            convertLowerCase();
+        })
+        
+        async function usernameWarn() {
+
+            console.log("chal rha h");
+            let token = username.value;
+            
+            const res = await fetch(`/username/${token}`);
+            console.log(res, "raw response");
+            const data = await res.json();
+
+            console.log(data);
+            console.log(data.length);
+
+            if (data != "") {
+                usernameWarning.innerHTML = `
+                <div class="ui negative message">
+                    <div class="header">Username already taken</div>
+                    </div>`;
+                    next.classList.add("disabled");
+        }
+        else if (data == "") {
+            usernameWarning.innerHTML = `
+            <div class="ui positive message">
+                <div class="header">Username available</div>
+                </div>`;
+                next.classList.remove("disabled");
+            }
+        }
+       
+          // JS code to convert username input to LowerCase
+            function convertLowerCase(){
+                username.value=username.value.toLowerCase();
+            }
+        
+
+</script>
+</body>
+
+</html>

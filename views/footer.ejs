@@ -1,0 +1,48 @@
+<!-- common footer -->
+<div class="ui vertical footer segment" style="background-color: #f5f6f8;font-size: 1.45em !important;">
+  <div class="ui section divider"></div>
+  <div class="ui center aligned container">
+    <div class="ui stackable divided grid">
+      <div class="six wide column">
+        <h4 class="ui header">Links</h4>
+        <div class="ui link list">
+          <a href="/h/about" style="color: #5e81cf;" class="item">About</a>
+          <a href="/h/faq" style="color: #5e81cf;" class="item">FAQ</a>
+        </div>
+      </div>
+
+      <div class="seven wide column">
+        <h3 class="ui header" style="font-weight: 900 !important;">Heckfree</h3>
+        <p>Your call to get heck free.</p>
+      </div>
+    </div>
+    <div class="ui section divider"></div>
+      <img src="../img/logo.png" class="ui centered mini image">
+    <!-- <p style="margin-top: 15px">&copy; HeckFree 2020</p> -->
+    <div class="ui horizontal small divided list">
+      <a style="color: black" class="item" href="/h/terms">Terms</a>
+      <a style="color: black" class="item" href="/h/policy">Privacy Policy</a>
+    </div>
+  </div>
+</div>
+<!-- You MUST include jQuery before Fomantic -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/semantic.min.js"></script>
+  <script>
+    // jQuery for userProfile options for loggedIn user at navbar
+    $(document).ready(function () {
+      $('.userProfile').popup({
+        popup: '#popspecial',
+        on: 'click'
+      });
+    });
+
+  // Jquery code to trigger sidebar on clicking hamburger icon
+  $(document).ready(function () {
+    // create sidebar and attach to menu open
+    $(".ui.sidebar").sidebar("attach events", ".toc.item");
+  });
+  
+</script>
+
+<!-- common footer ends -->

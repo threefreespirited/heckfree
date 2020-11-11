@@ -1,0 +1,169 @@
+<%- include('header'); -%>
+
+  <!-- Goal section  -->
+
+  <div id="goal-section">
+
+    <div id="goalImg">
+      <img style="width: 100%;margin: 30px auto;" src="/icon/heckFreeGoal.svg" alt="goal">
+    </div>
+
+    <div>
+      <!-- <div class="heading" style="padding: 30px 0;">
+          <h2 style="margin-left: 180px;font-size:3rem;">Our Goal</h2>
+        </div> -->
+      <div class="content" style="font-size: 1.8rem;padding: 60px 45px;">
+        <p>We're a tool for connecting followers to your entire online arena and manage all your <span
+            class="multicolortext">links</span> with ease.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- goal section ends -->
+
+  <!-- Team section starts -->
+
+  <div id="team-section">
+
+    <section class="team-section">
+      <div class="container" style="padding: 0 10%;">
+        <div class="row">
+          <div class="section-title">
+            <h1>Reach Our Team</h1>
+          </div>
+        </div>
+
+        <div class="row myRow">
+          <div class="team-box">
+            <div class="inner-box">
+              <div class="image-box">
+                <div class="img">
+                  <img src="../img/harshitPic.jfif" alt="team" />
+                  <!-- social icons -->
+                  <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/harshit-sharma-945i/"><span class="fa fa-linkedin"></span></a>
+                    <a href="https://github.com/me-harshit"><span class="fa fa-github"></span></a>
+                  </div>
+                  <!-- social icons ends-->
+                </div>
+              </div>
+              <div class="caption-text">
+                <a href="https://me-harshit.netlify.app" class="memberName">
+                  <h4>Harshit Sharma</h4>
+                </a>
+                <p>Web Developer</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-box">
+            <div class="inner-box">
+              <div class="image-box">
+                <div class="img">
+                  <img src="../img/amanPic.jpg" alt="team" />
+                  <!-- social icons -->
+                  <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/aman-dixit-b371b9190/"><span class="fa fa-linkedin"></span></a>
+                    <a href="https://github.com/AMAN123956"><span class="fa fa-github"></span></a>
+
+                  </div>
+                  <!-- social icons ends-->
+                </div>
+              </div>
+              <div class="caption-text">
+                <a href="https://devwebaman.netlify.app/" class="memberName">
+                  <h4>Aman Dixit</h4>
+                </a>
+                <p>Web Developer</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-box">
+            <div class="inner-box">
+              <div class="image-box">
+                <div class="img">
+                  <img src="../img/sujalPic.jfif" alt="team" />
+                  <!-- social icons -->
+                  <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/sujal-gupta-776ba9190/"><span
+                        class="fa fa-linkedin"></span></a>
+                    <a href="https://github.com/heysujal"><span class="fa fa-github"></span></a>
+
+                  </div>
+                  <!-- social icons ends-->
+                </div>
+              </div>
+              <div class="caption-text">
+                <a href="https://heysujal.github.io/portfolio/" class="memberName">
+                  <h4>Sujal Gupta</h4>
+                </a>
+                <p>Web Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+</div>
+
+
+<!-- Contact section -->
+
+<div id="contact-us">
+  <div class="heading" style="padding:50px;">
+    <h2 style="text-align:center;font-size:3.3rem">Contact Us</h2>
+  </div>
+  <div class="content" id="contactBox">
+
+    <form class="ui form" action="mailto:sujalgupta6100@gmail.com">
+      <div class="field">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Name" required>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Email" required>
+      </div>
+
+
+      <div class="field">
+        <label>Text</label>
+        <textarea name="message" placeholder="enter message here" required></textarea>
+      </div>
+
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+
+  </div>
+
+  <!-- contact section ends -->
+
+ 
+
+
+<%- include('footer'); -%>
+
+
+<script>
+  // Jquery code to trigger following menu once the scrollbar passed #goal-section
+  $(document).ready(function () {
+    // fix menu when passed
+    $("#goal-section").visibility({
+      once: false,
+      onBottomPassed: function () {
+        $(".fixed.menu").transition("fade in");
+      },
+      onBottomPassedReverse: function () {
+        $(".fixed.menu").transition("fade out");
+      },
+    });
+  });
+
+</script>
+</body>
+
+</html>

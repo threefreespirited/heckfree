@@ -1,0 +1,107 @@
+<%- include('header'); -%>
+
+    <style>
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        #questAns {
+            margin: 100px 0;
+            padding: 0px 12%;
+        }
+        
+        #mainCont {
+            width: 75%;
+            margin-top: 45px;
+            font-size: 1.5rem;
+        }
+        @media screen and (max-width: 700px) {
+            #questAns {
+                margin: 60px 0%;
+                padding: 0px 6%;
+            }
+            
+            #mainCont {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+    <h2>FAQ(s)</h2>
+    <section id="questAns">
+
+        <h3>Here are some questions asked by users frequently. Check this section before asking a query.</h3>
+
+        <div id="mainCont" class="ui fluid accordion">
+            <div class="title" style="color: #5e81cf;">
+                <i class="dropdown icon"></i>
+                What is Heckfree?
+            </div>
+            <div class="content">
+                <p>Heckfree is a tool which will help you access and manage all your links easily and in a minimalistic
+                    manner.</p>
+            </div>
+
+            <br>
+
+            <div class="title" style="color: #5e81cf;">
+                <i class="dropdown icon"></i>
+                Why Heckfree?
+            </div>
+            <div class="content">
+                <p>Heckfree provides you with custom styles including background color,avatar and font which you can
+                    give to your custom page.</p>
+            </div>
+
+            <br>
+
+            <div class="title" style="color: #5e81cf;">
+                <i class="dropdown icon"></i>
+                Can I edit or change my username or Heckfree URL?</div>
+            <div class="content" style="line-height: 1.5;">You can choose your own customer
+                username on the initial sign up page when
+                registering for your Heckfree
+                account. <br>
+                Unfortunately, once you have signed up to an account you are unable to customise your username or
+                URL
+                beyond this.
+                <br>
+                <br>
+                Please note: If you would like to use a new username you will need to create a new HeckFree. You can
+                use
+                the same email as long as the username is different.
+            </div>
+
+            <br>
+
+            <div class="title" style="color: #5e81cf;">
+                <i class="dropdown icon"></i>
+                Can I reset my password?
+            </div>
+            <div class="content">
+                <p>Yes, you can reset your password once you are logged in.</p>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <%- include('footer'); -%>
+
+</body>
+
+<script>
+
+    // jQuery to trigger answer on clicking expand icon
+    $('.ui.accordion')
+        .accordion()
+        ;
+</script>
+
+</html>

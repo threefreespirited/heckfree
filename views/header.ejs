@@ -1,0 +1,160 @@
+<!-- header -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <% if(pageTitle == "Share one and connect with many"){ %>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="We're a tool for connecting followers to your entire online arena and manage all your links with ease." />
+  <meta name="author" content="Heckfree" />
+  <meta name="keywords" content="Heckfree,Heck free,link-management,tool,utility,easy,lingtree,biolink,link,linking-tool">
+
+  <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+  <meta property="og:site_name" content="Heckfree" />
+  <!-- website name -->
+  <meta property="og:site" content="heckfree.herokuapp.com" />
+  <!-- website link -->
+  <meta property="og:title" content="HeckFree" />
+  <!-- title shown in the actual shared post -->
+  <meta property="og:description" content="We're a tool for connecting followers to your entire online arena and manage all your links with ease." />
+  <!-- description shown in the actual shared post -->
+  <meta property="og:image" content="../img/heckfree.jpg" />
+  <!-- image link, make sure it's jpg -->
+  <meta property="og:url" content="https://heckfree.herokuapp.com/" />
+  <!-- where do you want your post to link to -->
+  <meta property="og:type" content="article" />
+
+  <!-- google verification meta tag -->
+
+  <% }%>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+
+  <title>Heckfree | <%= pageTitle %></title>
+
+  <!-- Fomantic CSS cdn -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/semantic.min.css" />
+
+  <!-- Custom stylesheets -->
+  <link rel="stylesheet" href="/indexStyles.css" />
+  <link rel="stylesheet" href="/register.css" />
+  <link rel="stylesheet" href="/aboutStyles.css" />
+  <link rel="stylesheet" href="/commonstyles.css" />
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Kulim+Park&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Logic for displaying (Login/Register Butttons) or (user profile) ,if user is unauthenticated or isAuthenticated  -->
+
+  <% let one=""; let inOrOut=""; if(useravatar == "" && username == "") {
+    inOrOut = `
+    <div id="loginRegister">
+      <div
+        class="ui buttons"
+        id="loginRegister"
+        style="margin-top: 4px !important; margin-bottom: 0px !important"
+      >
+        <a href="/h/login"><button class="ui button">Login</button></a>
+        <div class="or"></div>
+        <a href="/h/register"
+          ><button
+            class="ui button active"
+            style="background-color: #5e81cf; color: white"
+          >
+            SignUp
+          </button></a
+        >
+      </div>
+    </div>
+    `; } else if(username != "") { console.log(useravatar,"hello");
+    if(useravatar != ""){ one = useravatar[0].userImage; } else if(useravatar ==
+    ""){ console.log("useravatar[0].userImage","hello");
+    one="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png"
+    } inOrOut = `
+    <div class="userProfile">
+      <a id="userLabel" class="ui basic image big label">
+        <img src="${one}" />
+        ${username}
+        <i class="dropdown icon" style="margin-left: 10px; margin-right: 0"></i>
+      </a>
+    </div>
+    <div id="popspecial" class="ui flowing popup top left transition">
+      <a href="/h/dashboard/${username}"
+        ><button class="ui button" style="margin: 0px">My Dashboard</button></a
+      >
+      <br />
+      <a href="/h/logout"
+        ><button class="ui button" style="margin: 10px 0; margin-bottom: 0">
+          Logout
+        </button></a
+      >
+    </div>
+    `; } %>
+
+  <!-- Following Menu -->
+  <!-- this is displayed when a particular section is scrolled on the page (handled using jQuery) -->
+
+  <div class="ui large top hidden fixed menu" id="follMenu" style="padding: 7px 0 !important">
+    <div class="ui container">
+      <a href="/" class="logo" style="padding: 0; text-align: center">
+        <img src="../img/logo.png" class="ui mini image" />
+      </a>
+      <a href="/" class="item"> HeckFree </a>
+      <a href="/h/about" class="item">About</a>
+
+      <div class="ui right menu inOrOutDesk">
+        <!-- inOrOut variable is set above as per Authentication state of user -->
+        <%- inOrOut %>
+      </div>
+    </div>
+  </div>
+  <!-- following menu ends -->
+
+  <!-- Basic Navbar -->
+  <section id="navbar" class="myNavbar">
+    <div class="ui masthead center aligned segment">
+      <div class="ui container">
+        <div class="ui huge secondary pointing menu">
+          <a class="toc item left">
+            <i class="sidebar icon"></i>
+          </a>
+          <a href="/" class="logo" style="padding: 0 0 4px 0">
+            <img src="../img/logo.png" class="ui mini image" />
+          </a>
+          <!-- copied the hamburger icon so as it takes equal width on the right side -->
+          <a class="toc item right" style="visibility: hidden; color: darkslategrey">
+            <i class="sidebar icon"></i>
+          </a>
+          <a href="/" class="item"> HeckFree </a>
+          <a href="/h/about" class="item">About</a>
+          <div class="ui right menu inOrOutDesk">
+            <!-- inOrOut variable is set above as per Authentication state of user -->
+            <%- inOrOut %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Basic navbar ends  -->
+
+  <!-- Sidebar Menu -->
+  <div class="ui vertical sidebar menu">
+    <a class="active item" href="/">HeckFree</a>
+    <a class="item" href="/h/about">About</a>
+    <div class="ui right menu inOrOut" style="margin: 10px 15px">
+      <!-- inOrOut variable is set above as per Authentication state of user -->
+      <%- inOrOut %>
+    </div>
+  </div>
+  <!-- Sidebar menu ends  -->
+

@@ -1,0 +1,50 @@
+@media only screen and (max-width: 767.98px){
+.ui.steps:not(.unstackable) {
+    flex-direction: row;
+}
+}
+
+.second-step{
+    display: none;
+}
+
+.third-step{
+    display: none;
+}
+.submitBtn{
+    margin-top: 40px !important;
+}
+
+.myContainer{
+    width: 87%;
+    margin: 10px auto;
+    margin-bottom: 120px;
+    max-width: 400px;
+}
+
+#loginContainer{
+    padding:100px 0px;
+}
+
+@media screen and (max-width:700px){
+    
+    #loginContainer{
+        padding: 60px 0px;
+    }
+
+}
+
+#interestTags .myTags{
+    margin: 6px 0 !important;
+}
+.myTags{
+    cursor:pointer;
+   
+}
+
+.selectedColor{
+    background-color:#5e81cf !important;
+  color:white !important;
+}
+
+ 

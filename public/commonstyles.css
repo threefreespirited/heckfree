@@ -1,0 +1,144 @@
+/* Basic Styles */
+
+html,
+body {
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kulim Park', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*Basic Styles ends*/
+
+
+/* Navbar Styles starts*/
+
+/* Fomantic part */
+.hidden.menu {
+    display: none;
+}
+
+.masthead.segment {
+    /* min-height: 700px; */
+    padding: 1em 0;
+}
+
+.masthead .logo.item img {
+    margin-right: 1em;
+}
+
+.masthead .ui.menu .ui.button {
+    margin-left: 0.5em;
+}
+
+
+.ui.vertical.stripe {
+    padding: 8em 0;
+}
+
+.ui.vertical.stripe .floated.image {
+    clear: both;
+}
+
+.ui.vertical.stripe p {
+    font-size: 1.33em;
+}
+
+.ui.vertical.stripe .horizontal.divider {
+    margin: 3em 0;
+}
+
+.quote.stripe.segment {
+    padding: 0;
+}
+
+.quote.stripe.segment .grid .column {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.footer.segment {
+    padding: 0;
+    padding-bottom: 60px;
+}
+
+.secondary.pointing.menu .toc.item {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .ui.fixed.menu {
+        display: none !important;
+    }
+
+    .secondary.pointing.menu .item,
+    .secondary.pointing.menu .menu {
+        display: none;
+    }
+    
+    .secondary.pointing.menu .toc.item {
+        display: block;
+    }
+    
+    .masthead.segment {
+        min-height: 50px;
+    }
+
+    .top.hidden.fixed.menu {
+        display: none;
+    }
+}
+
+
+.myNavbar {
+    padding: 0px 0%;
+    /* padding-top: 10px; */
+}
+
+.hidden.menu {
+    display: none;
+}
+
+.ui.segment {
+    border: none;
+    box-shadow: none;
+}
+
+/* Our custom styles for navbar  */
+
+.inOrOut,
+.inOrOutDesk {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+@media screen and (max-width: 700px) {
+  .inOrOutDesk {
+    display: none !important;
+  }
+
+  #follMenu {
+    display: none;
+  }
+}
+
+
+/* Navbar css ends*/
+
+
+/* Footer section style starts */
+.footer.segment {
+    padding: 0;
+    padding-bottom: 30px;
+}
+.footer {
+    font-size: 1.3rem !important;
+}
+
+/* Footer section style ends */
+

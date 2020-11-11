@@ -1,0 +1,234 @@
+<!-- header -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Meta tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  
+  <title>Heckfree | Share one and connect with many</title>
+
+  <link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/semantic.min.css" />
+  <link rel="stylesheet" href="/commonstyles.css" />
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Kulim+Park&display=swap" rel="stylesheet" />
+  <!-- stylesheet for custom fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Comfortaa&family=Happy+Monkey&family=Indie+Flower&family=Itim&family=Just+Another+Hand&family=Montserrat&family=Patrick+Hand&family=Roboto&family=Sue+Ellen+Francisco&family=Varela+Round&family=Zeyada&display=swap"
+    rel="stylesheet">
+</head>
+
+<style>
+  #userAbout {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .socialIcons {
+    width: 36px;
+    margin: 0 7px;
+  }
+
+  .bottom-content {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.3rem;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.527);
+    color: white;
+    margin: 15px 0;
+    transition: 0.3s ease-in-out all;
+  }
+
+  .bottom-content:hover {
+    background-color: white;
+    color: black;
+  }
+</style>
+
+<body>
+
+  <div class="mainContainer" id="card-one" style="padding:30px 0%;min-height: 100vh;">
+
+    <!-- Top Section -->
+    <div id="userAbout">
+      <!-- https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png -->
+      <% let one;  
+      if(avatarData == "") 
+      {  
+        one="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png"
+      }
+    else if(avatarData != "") {
+      let u = avatarData.length;
+      one = avatarData[u-1].userImage;
+      } %>
+
+      <img src="<%=one%>" style="
+        border: 3px solid white;
+        padding: 3px;
+        width: 30%;
+        max-width: 130px;
+        margin-left: 15px;
+        margin-top: 15px;
+        margin-right: 20px;
+        border-radius: 100%;
+        float: left;
+        " alt="myPic" />
+
+      <span>
+        <p id="username" style="
+          margin-left: 0px;
+          margin-top: 20px;
+          color: white;
+          text-align:center;
+          font-size:2.3rem;
+          font-weight: 400;
+          margin-bottom: 0px;
+          ">
+          <%= name %>
+        </p>
+
+        <div id="socials" style="margin-top: 10px;text-align:center;">
+          <!-- <a style="cursor: pointer"><img style="width: 25px; margin-right: 3px" src="icon/facebook.png" /></a>
+          <a style="cursor: pointer"><img style="width: 25px; margin-right: 3px" src="icon/twitter.png" /></a>
+          <a style="cursor: pointer"><img style="width: 25px; margin-right: 3px"
+            src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a> -->
+
+          <%  fcount = 1; tcount = 1; icount =1;
+            if(linksData != "")         {       
+              for( var  i =0; i<linksData.length; i++){ 
+                if(linksData[i].icon == "facebook" && fcount<=1)  { %>
+
+
+          <a href="<%= linksData[i].newlink %>" target="_blank" style="cursor: pointer"><img class="socialIcons"
+              src="/icon/facebook.png" /></a>
+
+          <%   fcount++; }  
+                    if(linksData[i].icon == "twitter" && tcount<=1)  { %>
+
+
+          <a href="<%= linksData[i].newlink %>" target="_blank" style="cursor: pointer"><img class="socialIcons"
+              src="/icon/twitter.png" /></a>
+
+          <%      
+                  tcount++; }
+                  if(linksData[i].icon == "instagram" && icount<=1)  { %>
+
+
+          <a href="<%= linksData[i].newlink %>" target="_blank" style="cursor: pointer"><img class="socialIcons"
+              src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
+
+          <%  icount++;  } 
+               
+              
+             }    }    %>
+
+        </div>
+      </span>
+    </div>
+
+    <!--Bottom Section-->
+    <div style="width: 88%;max-width: 510px;margin: 10px auto;margin-bottom: 45px;padding: 10px 0px;min-height: 47vh;">
+      <!-- <div class="bottom-content" id="item1">
+        <i class="linkedin icon"></i>LinkedIn
+      </div>-->
+
+      <%    if(linksData != "")         {        
+        for( var  i =0; i<linksData.length; i++){
+          if(linksData[i].icon != "facebook" && linksData[i].icon != "twitter" && linksData[i].icon != "instagram")  { 
+            %>
+
+      <a href="<%= linksData[i].newlink %>" target="_blank">
+        <div class="bottom-content">
+          <i class="<%= linksData[i].icon %> icon" style="margin-right: 10px;"></i><%= linksData[i].title %>
+        </div>
+      </a>
+      <% } }    }    %>
+
+
+    </div>
+
+    <!--Footer -->
+    <div class="card-footer">
+      <a href="/" style="display: flex;width: fit-content;margin: 0 auto;align-items: center;font-size: 1.3rem;">
+        <img src="/../img/logo.png" style="width:40px;">
+        <span style="color: white;margin-left: 9px;margin-top: 9px;">HeckFree</span>
+      </a>
+    </div>
+  </div>
+
+  <%  let mobileTheme ="";
+  if (appearanceData != "") {
+  let t = appearanceData.length;
+  mobileTheme = appearanceData[t - 1].colorCode;
+}
+else if (appearanceData == "") {
+  mobileTheme = "linear-gradient(to bottom, #85d8ce, #085078)";
+}
+%>
+  <div id="empty-div" style="display:none"><%= mobileTheme %></div>
+  <%  let fontToSet = "";
+    if(fontData == ""){
+      fontToSet =  "'Kulim Park', sans-serif";
+    }
+    else if (fontData !=""){
+      fontToSet =  fontData[0].fontFamily;
+    }
+    let myFontSize;  
+    if(fontSize == "") 
+    {  
+      myFontSize ="16px";
+    }
+  else if(fontSize != "") {
+    myFontSize = fontSize[0].fontSize;
+    }  
+    %>
+
+  <div id="fontDiv" style="display:none"><%= fontToSet %></div>
+  <div id="fontHelp" style="display: none;"><%=myFontSize%></div>
+
+
+</body>
+
+<script>
+  // JS code to set font and theme recieved from res.render
+  let emptyDiv = document.querySelector("#empty-div");
+  let fontDiv = document.querySelector("#fontDiv");
+  let Theme = "";
+  let Font = "";
+
+  Theme = emptyDiv.innerHTML;
+  Font = fontDiv.innerHTML;
+  // console.log(Theme);
+  // console.log(Font);
+  document.querySelector(".mainContainer").style.background = `${Theme}`;
+  document.querySelector(".mainContainer").style.fontFamily = `${Font}`;
+
+  // JS code to set font size recieved from res.render
+  let myFontSize = document.querySelector("#fontHelp").innerHTML;
+  console.log(myFontSize);
+  // document.querySelector(".mobile").style.fontSize = `${myFontSize}`;
+  document.querySelector("#username").style.fontSize = `${myFontSize}`;
+
+  // JS code to show all user added links recieved from res.render
+  let bottomContent = document.querySelectorAll(".bottom-content");
+
+  for (let i = 0; i < bottomContent.length; i++) {
+    bottomContent[i].style.fontSize = `${myFontSize}`;
+  }
+
+
+</script>
+
+</html>

@@ -1,0 +1,1115 @@
+<!-- header -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+
+  <title>Heckfree | Share one and connect with many</title>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/semantic.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kulim+Park&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/commonstyles.css">
+
+  <!-- Font for userSelection -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Comfortaa&family=Happy+Monkey&family=Indie+Flower&family=Itim&family=Just+Another+Hand&family=Montserrat&family=Patrick+Hand&family=Roboto&family=Sue+Ellen+Francisco&family=Varela+Round&family=Zeyada&display=swap"
+    rel="stylesheet">
+
+  <style>
+    @media only screen and (max-width: 700px) {
+      #logoutBtn1 {
+        display: none;
+      }
+    }
+
+    #mainContainer {
+      display: flex;
+      justify-content: center;
+    }
+
+    #leftContainer {
+      width: 70%;
+      height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    #myLinkBox {
+      display: none;
+    }
+
+    #rightContainer {
+      width: 30%;
+      height: 100vh;
+    }
+
+    #borderDiv {
+      padding: 0 10px;
+      border-left: 2px solid gray;
+    }
+
+    .top-section {
+      border-bottom: 2px solid gray;
+      padding: 13px;
+      margin-right: 20px;
+      margin-bottom: 40px;
+    }
+
+    .mobile {
+      font-size: 1.2rem;
+      width: 245px;
+      max-width: 95%;
+      height: 470px;
+      margin: 45px auto;
+      border: 10px solid #1b262c;
+      border-top-left-radius: 35px;
+      border-top-right-radius: 35px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
+    .bottom-content {
+      text-align: center;
+      padding: 10px 0;
+      font-size: 1.3rem;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.527);
+      color: white;
+      margin: 10px 0;
+    }
+
+    .bottom-content:hover {
+      background-color: white;
+      color: black;
+    }
+
+    #appearance,
+    #settings {
+      display: none;
+    }
+
+    .colorRow {
+      margin-top: 60px !important;
+      margin-bottom: 100px !important;
+      padding: 0px 4% !important;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2rem;
+    }
+
+    .color-box {
+      height: 200px;
+      cursor: pointer;
+      margin: 20px auto;
+      transition: 0.02s linear all;
+      border-radius: 6px;
+    }
+
+    .color-box:hover {
+      transform: scale(1.03);
+    }
+
+
+    .myLeftLinks {
+      border: 2px solid rgba(0, 0, 0, 0.527);
+      padding: 15px;
+      width: 40%;
+      margin: 10px auto;
+      border-radius: 6px;
+      border-bottom-width: 6px;
+      border-bottom-color: #5e81cf;
+      cursor: pointer;
+    }
+
+    .myLeftLinks {
+      transition: 0.3s linear all;
+    }
+
+    .myLeftLinks:hover {
+      transform: scale(1.03);
+    }
+
+    #userLink:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+
+    #resetPassword form {
+
+      margin-left: 0px;
+      margin-bottom: 120px;
+      width: 45%;
+      min-width: 250px;
+    }
+
+    @media screen and (max-width:950px) {
+      #mainContainer {
+        flex-direction: column;
+      }
+
+      #leftContainer {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-bottom: 45px;
+      }
+
+      #rightContainer {
+        width: 100%;
+      }
+
+      .myLeftLinks {
+        padding: 15px;
+        width: 81%;
+        max-width: 360px;
+      }
+
+      .colorRow {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+      }
+
+      .mobile {
+        /* width: 90%; */
+        width: 220px;
+        height: 470px;
+
+      }
+
+      .top-section {
+        margin-right: 0px;
+      }
+
+      #resetPassword form {
+        margin-bottom: 10px;
+      }
+
+    }
+
+    @media screen and (max-width:500px) {
+      .colorRow {
+        padding: 0px 4% !important;
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    @media screen and (min-width:500px) and (max-width:950px) {
+      .colorRow {
+        padding: 0px 4% !important;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .card-footer {
+      color: white;
+      padding: 5px;
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 0px;
+    }
+
+    #username {
+      margin-left: 0px;
+      margin-top: 30px;
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 0px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <div id="mainContainer">
+
+    <div id="leftContainer">
+
+      <!-- Navbar -->
+
+      <section id="navbar" class="myNavbar">
+        <div class="pusher">
+          <div class="ui masthead center aligned">
+            <div class="ui" style="padding: 10px 6%;">
+              <div class="ui large secondary pointing menu">
+                <a class="toc item left">
+                  <i class="sidebar icon"></i>
+                </a>
+                <a href="/" class="logo" style="padding: 0 0 4px 0;">
+                  <img src="/../img/logo.png" class="ui mini image">
+                </a>
+                <!-- copied the hamburger icon so as it takes equal width on the right side -->
+                <a class="toc item right" style="visibility: hidden;">
+                  <i class="sidebar icon"></i>
+                </a>
+                <a href="/" style="padding-left: 6px;" class="item">
+                  HeckFree
+                  <!-- <img style="width: 90px;" src="" alt=""> -->
+                </a>
+                <a class="active item navItems" myValue="1"><i class="linkify icon"></i>Links</a>
+                <a class="item navItems" myValue="2"><i class="pen icon"></i>Appearance</a>
+                <a class="item navItems" myValue="3"><i class="cogs icon"></i>Settings</a>
+
+                <div class="ui right menu" id="logoutBtn1" style="border:none;box-shadow: none;">
+                  <a href="/h/logout"><button class="ui button" style="margin: 0px;">Logout</button></a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sidebar Menu -->
+
+      <div class="ui vertical sidebar menu">
+        <a class="active item" href="/">HeckFree</a>
+        <a onclick=showNav() class="item navItems" myValue="1"><i class="linkify icon"></i>Links</a>
+        <a onclick=showNav() class="item navItems" myValue="2"><i class="pen icon"></i>Appearance</a>
+        <a onclick=showNav() class="item navItems" myValue="3"><i class="cogs icon"></i>Settings</a>
+
+
+        <a href="/h/logout" id="logoutBtn2" style="display: block;margin: 10px 20px;"><button class="ui button"
+            style="margin: 0px;">Logout</button></a>
+      </div>
+
+
+      <!-- Link Section -->
+      <div id="links" style="margin-bottom: 17px;">
+
+        <div id="addNewBtn" style="width: 70%;margin:40px 15%;background-color: #5e81cf;color: white;"
+          class="ui big button">Add new link <i style="margin-left: 20px;" class="add icon"></i></div>
+
+        <!-- Add Link section starts -->
+        <div id="myLinkBox">
+
+
+          <form action="/addNewLink" method="POST">
+
+            <div class="ui form newLinkBox"
+              style="width: 90%;max-width: 400px;;margin: 20px auto;padding: 10px;border: 2px solid #cacdcd;border-radius: 4px;">
+              <button type="submit" class="ui submit circular icon button" id="mySubmitBtn" style="float:right;">
+                <i class="icon add"></i>
+              </button>
+
+              <div class="field required ui scrolling search">
+                <label>Title</label>
+                <div class="ui icon input">
+                  <input class="prompt" type="text" id="linkTitle" name="title"
+                    placeholder="Search Title or Enter yours" required>
+                  <i class="search icon"></i>
+                </div>
+                <div class="results"></div>
+
+
+              </div>
+              <div class="field required">
+                <label>Link</label>
+                <input type="text" id="newlink" value="https://" min="2" name="newlink" placeholder="Enter Link"
+                  required />
+              </div>
+
+              <input type="text" value="" name="icon" id="myIcon" style="display: none;">
+              <input type="text" value="<%= name %>" name="username" id="myUsersname" style="display: none;">
+
+            </div>
+
+
+          </form>
+
+
+        </div>
+        <!-- Add Link section ends -->
+
+        <!-- Main  -->
+        <!-- logic for showing list if available -->
+        <%  let myLinkUtil = ""; 
+          if(linksData == "") 
+            {  
+              myLinkUtil = `  
+                <img style="width: 20%;opacity: 52%;margin-left: 40%;"
+                  src="https://www.flaticon.com/svg/static/icons/svg/1380/1380641.svg" alt="">
+                <p class="ui text massive" style="font-size:1.5rem;color: gray;margin:30px 0;text-align:center;">
+                  You don't have any links to display.
+                </p>
+                `;       
+            }  
+            else if(linksData != "") {
+  
+            for(let i = 0 ; i<linksData.length; i++) {   
+              
+              myLinkUtil += `
+                <form action="/removeLink" method="POST" class="myLeftLinks" style="position: relative;">
+                  <input type="text" value="${name}" name="username" id="myUsername" style="display: none;">
+                  <input type="text" name="removeThis" value="${linksData[i]._id}" style="display: none;">
+                  <h4 style="font-size: 1.3rem;font-weight: bold;margin: 4px;">Title</h4>
+                  <p style="font-size: 1.2rem;margin: 4px;color: #4b5d67;"> <i class="${linksData[i].icon} icon"></i> ${linksData[i].title} 
+                  <h4 style="font-size: 1.3rem;font-weight: bold;margin: 4px;">Link</h4>
+                  <a href="${linksData[i].newlink}" target="_blank" style="font-size: 1.2rem;margin: 4px;color: #8B008B;text-decoration: underline;">${linksData[i].newlink}</a>
+                  <button class="circular ui icon button" type="submit" style="position: absolute;top: 10px;right: 10px;">
+                    <i class="trash icon"></i>
+                  </button> 
+                </form>`;
+
+          } } %>
+
+
+        <div id="leftLinks" style="margin-top: 45px;overflow-y:auto;">
+          <%- myLinkUtil %>
+        </div>
+
+
+      </div>
+      <!-- Link Section  ends-->
+
+
+
+      <!-- Apperance  Section  starts-->
+
+      <div id="appearance">
+        <h2 style="margin: 45px; margin-bottom: 0;">Choose Theme</h2>
+        <div class="colorRow">
+        </div>
+        <div class="fontRow">
+          <h2 style="margin: 45px; margin-bottom: 0;">Choose Font</h2>
+
+          <form action="/addFont" class="ui form" method="POST" style="margin:45px;">
+
+            <input type="text" value="<%= name %>" name="username" id="myUsername" style="display: none;">
+            <input type="text" name="fontFamily" id="fontFamily" style="display: none;" required>
+
+            <div class="ui fluid selection dropdown" style="width:90% !important;max-width:400px;">
+              <i class="dropdown icon"></i>
+              <div class="default text">Select font-family</div>
+              <div class="menu">
+                <div class="item userFont" style="font-family: 'Amatic SC', cursive;font-size: 1.3rem;"
+                  dataValue="'Amatic SC', cursive">
+                  Amatic SC
+                </div>
+                <div class="item userFont" style="font-family: 'Comfortaa', cursive;font-size: 1.3rem;"
+                  dataValue="'Comfortaa', cursive">
+                  Comfortaa
+                </div>
+                <div class="item userFont" style="font-family: 'Happy Monkey', cursive;font-size: 1.3rem;"
+                  dataValue="'Happy Monkey', cursive">
+                  Happy Monkey
+                </div>
+                <div class="item userFont" style="font-family: 'Indie Flower', cursive;font-size: 1.3rem;"
+                  dataValue="'Indie Flower', cursive">
+                  Indie Flower
+                </div>
+                <div class="item userFont" style="font-family: 'Itim', cursive;font-size: 1.3rem;"
+                  dataValue="'Itim', cursive">
+                  Itim
+                </div>
+                <div class="item userFont" style="font-family: 'Just Another Hand', cursive;font-size: 1.3rem;"
+                  dataValue="'Just Another Hand', cursive">
+                  Just Another Hand
+                </div>
+                <div class="item userFont" style="font-family: 'Montserrat', sans-serif;font-size: 1.3rem;"
+                  dataValue="'Montserrat', sans-serif">
+                  Montserrat
+                </div>
+                <div class="item userFont" style="font-family: 'Patrick Hand', cursive;font-size: 1.3rem;"
+                  dataValue="'Patrick Hand', cursive">
+                  Patrick Hand
+                </div>
+                <div class="item userFont" style="font-family: 'Roboto', sans-serif;font-size: 1.3rem;"
+                  dataValue="'Roboto', sans-serif">
+                  Roboto
+                </div>
+                <div class="item userFont" style="font-family: 'Sue Ellen Francisco', cursive;font-size: 1.3rem;"
+                  dataValue="'Sue Ellen Francisco', cursive">
+                  Sue Ellen Francisco
+                </div>
+                <div class="item userFont" style="font-family: 'Varela Round', sans-serif;font-size: 1.3rem;"
+                  dataValue="'Varela Round', sans-serif">
+                  Varela Round
+                </div>
+                <div class="item userFont" style="font-family: 'Zeyada', cursive;font-size: 1.3rem;"
+                  dataValue="'Zeyada', cursive">
+                  Zeyada
+                </div>
+
+
+              </div>
+            </div>
+            <button class="ui button" style="margin: 20px 0px;" type="submit">Choose Font</button>
+          </form>
+
+        </div>
+
+        <div class="fontSizeRow">
+          <h2 style="margin: 45px; margin-bottom: 0;">Choose Font Size</h2>
+
+          <form action="/changeFontSize" class="ui form" method="POST"
+            style="margin:45px;margin-bottom: 250px;width: 39%;">
+
+            <input type="text" value="<%= name %>" name="username" id="myUsername" style="display: none;">
+            <div class="field">
+              <select class="ui fluid dropdown" name="fontSize" id="fontSize" required>
+                <option value="">Choose Font Size</option>
+                <option value="11px">11 px</option>
+                <option value="12px">12 px</option>
+                <option value="13px">13 px</option>
+                <option value="14px">14 px</option>
+                <option value="15px">15 px</option>
+                <option value="16px">16 px</option>
+                <option value="17px">17 px</option>
+                <option value="18px">18 px</option>
+                <option value="19px">19 px</option>
+                <option value="20px">20 px</option>
+                <option value="21px">21 px</option>
+                <option value="22px">22 px</option>
+                <option value="23px">23 px</option>
+                <option value="24px">24 px</option>
+                <option value="25px">25 px</option>
+              </select>
+            </div>
+
+            <button class="ui button" style="margin: 20px 0px;" type="submit">Choose Font Size</button>
+
+          </form>
+        </div>
+
+      </div>
+      <!-- Apperance  Section  starts-->
+
+      <!-- Settings section starts -->
+      <div id="settings" style="padding: 15px 12%;">
+
+        <form action="/addAvatar" class="ui form" method="POST">
+
+          <h2 style="margin-top: 20px;">Profile</h2>
+
+          <input type="text" value="<%= name %>" name="username" id="myUsername" style="display: none;">
+
+          <div class="ui fluid selection dropdown" style="min-width: 250px;width:30% !important;">
+            <input type="text" name="userImage" id="userImage" style="display: none;" required>
+            <i class="dropdown icon"></i>
+            <div class="default text">Select your avatar</div>
+            <div class="menu">
+              <div class="item userAvatar" dataValue="https://bit.ly/34EC9OV">
+                <img class="ui avatar image" src="https://bit.ly/34EC9OV">
+                Skeletor
+              </div>
+              <div class="item userAvatar" dataValue="https://bit.ly/2Jnmrj5">
+                <img class="ui mini avatar image" src="https://bit.ly/2Jnmrj5">
+                Elliot Fu
+              </div>
+              <div class="item userAvatar" dataValue="https://bit.ly/3oIS8n2">
+                <img class="ui mini avatar image" src="https://bit.ly/3oIS8n2">
+                Stevie Feliciano
+              </div>
+              <div class="item userAvatar" dataValue="https://bit.ly/37UDFOY">
+                <img class="ui mini avatar image" src="https://bit.ly/37UDFOY">
+                Christian
+              </div>
+              <div class="item userAvatar" dataValue="https://fomantic-ui.com/images/avatar/large/helen.jpg">
+                <img class="ui mini avatar image" src="https://fomantic-ui.com/images/avatar/large/helen.jpg">
+                Hellen
+              </div>
+              <div class="item userAvatar" dataValue="https://fomantic-ui.com/images/avatar2/large/molly.png">
+                <img class="ui mini avatar image" src="https://fomantic-ui.com/images/avatar2/large/molly.png">
+                Molly
+              </div>
+              <div class="item userAvatar" dataValue="https://fomantic-ui.com/images/avatar/large/elliot.jpg">
+                <img class="ui mini avatar image" src="https://fomantic-ui.com/images/avatar/large/elliot.jpg">
+                Elliot
+              </div>
+              <div class="item userAvatar" dataValue="https://fomantic-ui.com/images/avatar/large/jenny.jpg">
+                <img class="ui mini avatar image" src="https://fomantic-ui.com/images/avatar/large/jenny.jpg">
+                Jenny
+              </div>
+              <div class="item userAvatar" dataValue="https://fomantic-ui.com/images/avatar2/large/kristy.png">
+                <img class="ui mini avatar image" src="https://fomantic-ui.com/images/avatar2/large/kristy.png">
+                Kristy
+              </div>
+              <div class="item userAvatar" dataValue="https://fomantic-ui.com/images/avatar2/large/matthew.png">
+                <img class="ui mini avatar image" src="https://fomantic-ui.com/images/avatar2/large/matthew.png">
+                Matthew
+              </div>
+              <div class="item userAvatar" dataValue="https://fomantic-ui.com/images/avatar2/large/elyse.png">
+                <img class="ui mini avatar image" src="https://fomantic-ui.com/images/avatar2/large/elyse.png">
+                Elyse
+              </div>
+              <div class="item userAvatar" dataValue="https://fomantic-ui.com/images/avatar/large/veronika.jpg">
+                <img class="ui mini avatar image" src="https://fomantic-ui.com/images/avatar/large/veronika.jpg">
+                Veronika
+              </div>
+              <div class="item userAvatar" dataValue="https://fomantic-ui.com/images/avatar/large/stevie.jpg">
+                <img class="ui mini avatar image" src="https://fomantic-ui.com/images/avatar/large/stevie.jpg">
+                Stevie
+              </div>
+
+            </div>
+          </div>
+          <button class="ui button" style="margin: 15px 0;" type="submit"> Choose Avatar </button>
+
+        </form>
+
+        <div id="resetPassword">
+          <h2 style="margin: 30px 0;">Reset Password</h2>
+
+          <form action="/updatePassword" class="ui form" method="post">
+
+            <input type="text" value="<%= name %>" name="username" id="myUsername" style="display: none;">
+
+            <div class="field">
+              <label style="font-size: 1.2rem;">Current Password</label>
+              <div class="ui left icon input">
+                <input name="password" type="password" placeholder="Current Password" required>
+                <i class="lock icon"></i>
+              </div>
+            </div>
+
+            <div class="field">
+              <label style="font-size: 1.2rem;">New Password</label>
+              <div class="ui left icon input commonPass">
+                <input name="cpassword" type="password" placeholder="New Password" id="pass1" required>
+                <i class="lock icon"></i>
+              </div>
+            </div>
+
+            <div class="field">
+              <label style="font-size: 1.2rem;">Confirm New Password</label>
+              <div class="ui left icon input commonPass">
+                <input name="cnpassword" type="password" placeholder="Confirm New Password" id="pass2" required>
+                <i class="lock icon"></i>
+              </div>
+            </div>
+
+            <div id="passMatchWarning" style="margin-top:10px;"></div>
+            <div id="passStrongWarning" style="margin-top:10px;"></div>
+
+            <button class="ui blue submit button" id="resetBtn" style="margin-top: 12px;">Change</button>
+
+          </form>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+    <!-- Settings section ends -->
+
+    <!-- vertical divider -->
+    <div id="borderDiv"></div>
+
+    <!-- Right section for mobile preview starts -->
+    <div id="rightContainer">
+
+      <div style="text-align: center;font-size:1rem;" class="top-section">
+        <a href="https://heckfree.herokuapp.com/<%=name%>" id="userLink" target="_blank"> <input type="text"
+            value="https://heckfree.herokuapp.com/<%=name%>" id="myInput" readonly
+            style="color:#5e81cf;font-size: 1.1rem;border-width:0px;max-width: 90%;width:400px;margin: 0 15px;margin-bottom: 10px;"
+            disabled></a>
+
+        <button class="ui button" id="copyBtn" onclick="myFunction()">Copy Link</button>
+      </div>
+
+      <% let one;  
+        if(avatarData == "") 
+        {  
+          one="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png"
+        }
+      else if(avatarData != "") {
+        let u = avatarData.length;
+        one = avatarData[u-1].userImage;
+        }
+        let myFontSize;  
+        if(fontSize == "") 
+        {  
+          myFontSize ="16px";
+        }
+      else if(fontSize != "") {
+        myFontSize = fontSize[0].fontSize;
+        }  
+        %>
+
+      <div id="fontHelp" style="display: none;"><%=myFontSize%></div>
+
+      <div class="mobile" id="card-one">
+        <!-- Top Section -->
+        <div style="display: flex; align-items: center">
+          <!-- https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png -->
+
+
+          <img id="profile-img" src="<%=one%>" style="
+              border: 2px solid white;
+              width: 33%;
+              margin-left: 15px;
+              margin-top: 30px;
+              margin-right: 20px;
+              border-radius: 100%;
+              float: left;
+              " alt="myPic" />
+
+          <span>
+            <p id="username">
+              <%= name %>
+            </p>
+
+            <div id="socials" style="margin-top: 10px">
+              <!-- <a style="cursor: pointer"><img style="width: 25px; margin-right: 3px" src="icon/facebook.png" /></a>
+                <a style="cursor: pointer"><img style="width: 25px; margin-right: 3px" src="icon/twitter.png" /></a>
+                <a style="cursor: pointer"><img style="width: 25px; margin-right: 3px"
+                  src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a> -->
+
+              <%  fcount = 1; tcount = 1; icount =1;
+                  if(linksData != "")         {       
+                    for( var  i =0; i<linksData.length; i++){ 
+                      if(linksData[i].icon == "facebook" && fcount<=1)  { %>
+
+
+              <a href="<%= linksData[i].newlink %>" target="_blank" style="cursor: pointer"><img
+                  style="width: 25px; margin-right: 3px" src="/icon/facebook.png" /></a>
+
+              <%   fcount++; }  
+                          if(linksData[i].icon == "twitter" && tcount<=1)  { %>
+
+
+              <a href="<%= linksData[i].newlink %>" target="_blank" style="cursor: pointer"><img
+                  style="width: 25px; margin-right: 3px" src="/icon/twitter.png" /></a>
+
+              <%      
+                        tcount++; }
+                        if(linksData[i].icon == "instagram" && icount<=1)  { %>
+
+
+              <a href="<%= linksData[i].newlink %>" target="_blank" style="cursor: pointer"><img
+                  style="width: 25px; margin-right: 3px"
+                  src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
+
+              <%  icount++;  } 
+                    
+                    
+                  }    }    %>
+
+            </div>
+          </span>
+        </div>
+
+        <!--Bottom Section-->
+        <div style="width: 90%; margin: 30px auto;margin-bottom: 45px;padding: 10px 0;height:220px;overflow-y: auto;">
+          <!-- <div class="bottom-content" id="item1">
+              <i class="linkedin icon"></i>LinkedIn
+            </div>-->
+
+          <%    if(linksData != "")         {        
+              for( var  i =0; i<linksData.length; i++){
+                if(linksData[i].icon != "facebook" && linksData[i].icon != "twitter" && linksData[i].icon != "instagram")  { 
+                  %>
+
+          <a href="<%= linksData[i].newlink %>" target="_blank">
+            <div class="bottom-content">
+              <i class="<%= linksData[i].icon %> icon"></i><%= linksData[i].title %>
+            </div>
+          </a>
+          <% } }    }    %>
+
+
+
+
+        </div>
+
+
+
+        <!--Footer of mobile section -->
+        <div class="card-footer">
+          <a class="item" href="/" style="display: flex;justify-content: center;align-items: center;">
+            <img src="/../img/logo.png" style="width:25px;">
+            <span style="color: white;margin-left: 9px;margin-top: 9px;">HeckFree</span>
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+
+    <%  let mobileTheme ="";
+        if (appearanceData != "") {
+        let t = appearanceData.length;
+        mobileTheme = appearanceData[t - 1].colorCode;
+      }
+      else if (appearanceData == "") {
+        mobileTheme = "linear-gradient(to bottom, #85d8ce, #085078)";
+      }
+      %>
+    <div id="empty-div" style="display:none"><%= mobileTheme %></div>
+    <%  let fontToSet = "";
+          if(fontData == ""){
+            fontToSet =  "'Kulim Park', sans-serif";
+          }
+          else if (fontData !=""){
+            fontToSet =  fontData[0].fontFamily;
+          }
+        %>
+
+
+  </div>
+
+  <!-- divs used for displaying messages passed on to ejs using res.render (rest is done below using jQuery) -->
+  <div id="fontDiv" style="display:none"><%= fontToSet %></div>
+  <div id="updateMessage" style="display:none"><%= updateMessage %></div>
+
+  <!-- Right section for mobile preview ends -->
+
+
+</body>
+
+
+<!-- You MUST include jQuery before Fomantic -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/semantic.min.js"></script>
+
+<script>
+  // jQuery code to trigger sidebar
+  $(document).ready(function () {
+    // create sidebar and attach to menu open
+    $(".ui.sidebar").sidebar("attach events", ".toc.item");
+  });
+
+  // jQuery code to display a toast message on recieving message through res.render
+  if (document.querySelector("#updateMessage").innerHTML != "") {
+    $('#updateMessage')
+      .toast({
+        class: 'success',
+        message: document.querySelector("#updateMessage").innerHTML
+      })
+      ;
+  }
+  // JS code to get username variables passed on using res.render
+  const username = document.getElementById("username");
+  console.log(username.innerHTML);
+  localStorage.setItem("username", username.innerHTML);
+
+  // jQuery code to handle search box when user adds new links to profile
+  let categoryContent = [
+    { category: 'Writing', title: 'Medium', icon: 'medium' },
+    { category: 'Writing', title: 'Blogspot', icon: 'blogspot' },
+    { category: 'Writing', title: 'Blogger', icon: 'blogger' },
+    { category: 'Creative', title: 'Adobe', icon: 'adobe' },
+    { category: 'Creative', title: 'Dribble', icon: 'dribble' },
+    { category: 'Creative', title: 'Canva', icon: 'copyright' },
+    { category: 'Education', title: 'Github', icon: 'github' },
+    { category: 'Education', title: 'StopStalk', icon: 'eye slash' },
+    { category: 'Social', title: 'Instagram', icon: 'instagram' },
+    { category: 'Social', title: 'Facebook', icon: 'facebook' },
+    { category: 'Social', title: 'Twitter', icon: 'twitter' },
+    { category: 'Social', title: 'LinkedIn', icon: 'linkedin' },
+    { category: 'Social', title: 'Quora', icon: 'quora' },
+    { category: 'Social', title: 'Reddit', icon: 'reddit' },
+    { category: 'Social', title: 'Slack', icon: 'slack' },
+    { category: 'Social', title: 'Snapchat', icon: 'snapchat' },
+    { category: 'Social', title: 'Behance', icon: 'behance' },
+    { category: 'Entertainment', title: 'YouTube', icon: 'youtube' },
+    { category: 'Fashion/Beauty', title: 'Magazine', icon: 'newspaper outline' },
+    { category: 'Programming', title: 'Codechef', icon: 'copyright outline' },
+    { category: 'Programming', title: 'Codeforces', icon: 'chart bar' },
+    { category: 'Music', title: 'Spotify', icon: 'spotify' },
+    { category: 'Web Development', title: 'Personal Website', icon: 'globe' },
+  ];
+  $('.ui.search')
+    .search({
+      type: 'category',
+      source: categoryContent
+    });
+
+  // JS code to set icon of user added links from above array(categoryContent)
+  let linkTitle = document.getElementById("linkTitle");
+  let myIcon = document.getElementById("myIcon");
+  setInterval(() => {
+    linkFunc();
+  }, 2000);
+  function linkFunc() {
+    for (let i = 0; i < categoryContent.length; i++) {
+      if (linkTitle.value == categoryContent[i].title)
+        myIcon.value = categoryContent[i].icon;
+    }
+  }
+
+
+  // JS code to show add link box when user clicks addNewLink
+  const addNewBtn = document.getElementById("addNewBtn");
+  const myLinkBox = document.getElementById("myLinkBox");
+  myLinkBox.style.display = "none";
+
+  addNewBtn.addEventListener("click", function () {
+    if (myLinkBox.style.display == "none") {
+      myLinkBox.style.display = "block";
+    }
+    else if (myLinkBox.style.display == "block") {
+      myLinkBox.style.display = "none";
+    }
+  });
+
+
+  // Navbar JS
+  var links = document.getElementById("links");
+  var appearance = document.getElementById("appearance");
+  var settings = document.getElementById("settings");
+
+  var navItems = document.querySelectorAll(".navItems");
+
+  for (let i = 0; i < navItems.length; i++) {
+
+    navItems[i].addEventListener("click", () => {
+      var currentSection = navItems[i].getAttribute("myValue");
+
+      console.log(currentSection);
+
+      if (currentSection == 1) {
+        displayNone();
+        links.style.display = "block";
+        navItems[0].classList.add("active");
+        navItems[1].classList.remove("active");
+        navItems[2].classList.remove("active");
+      }
+      else if (currentSection == 2) {
+        displayNone();
+        appearance.style.display = "block";
+        navItems[1].classList.add("active");
+        navItems[0].classList.remove("active");
+        navItems[2].classList.remove("active");
+      }
+      else if (currentSection == 3) {
+        displayNone();
+        settings.style.display = "block";
+        navItems[2].classList.add("active");
+        navItems[0].classList.remove("active");
+        navItems[1].classList.remove("active");
+      }
+
+    })
+  }
+
+  function displayNone() {
+    links.style.display = "none";
+    appearance.style.display = "none";
+    settings.style.display = "none";
+    links.classList.remove("active");
+    appearance.classList.remove("active");
+    settings.classList.remove("active");
+  }
+
+  // jQuery code to display sidenav when triggered
+  function showNav() {
+    $('.ui.sidebar').sidebar('toggle');
+
+  };
+
+  // JS code to display available colors in appearnace section
+  let colorRow = document.querySelector(".colorRow");
+  let colorData = [
+    { name: "Evening Sunshine", background: "linear-gradient(to top, #b92b27, #1565c0)" },
+    { name: "Wedding Day Blues", background: "linear-gradient(to top, #40e0d0, #ff8c00, #ff0080)" },
+    { name: "Fresh Turboscent", background: "linear-gradient(to top, #5f2c82, #49a09d)" },
+    { name: "Rainbow Blue", background: "linear-gradient(to top, #00f260, #0575e6)" },
+    { name: "Witching Hour", background: "linear-gradient(to top, #c31432, #240b36)" },
+    { name: "Argon", background: "linear-gradient(to top, #03001e, #7303c0, #ec38bc, #fdeff9)" },
+    { name: "Love Couple", background: "linear-gradient(to top, #3a6186, #89253e)" },
+    { name: "Blessed Blue", background: "linear-gradient(to top, #30cfd0 0%, #330867 100%)" },
+    { name: "Purple Bliss", background: "linear-gradient(to bottom, #360033, #0b8793)" },
+    { name: "Pizelex", background: "linear-gradient(to top, #114357, #f29492)" },
+    { name: "Sunset", background: "linear-gradient(to top, #0b486b, #f56217)" },
+    { name: "50 Shades of Grey", background: "linear-gradient(to top, #bdc3c7, #2c3e50)" },
+  ];
+  for (let i = 0; i < colorData.length; i++) {
+    colorRow.innerHTML += `
+      <form action="/appearance" class="ui form" method="POST"> 
+        <input type="text" value="<%= name %>" name="username" id="myUsername" style="display: none;">
+        <input type="text" name="colorName" value="${colorData[i].name}" style="display:none;">
+        <input type="text" name="colorCode" value="${colorData[i].background}" style="display:none;">
+        <input type="text" name="colorNumber" value="${i}" style="display:none;">
+        
+        <button class="ui button color-box " type="submit" style="background:${colorData[i].background};width:100%;"> 
+          
+          <p style="text-align:center;margin:auto;color:white;font-weight: 400;font-size:1.2rem;f">${colorData[i].name}</p>   </button>
+          </form>    
+        `;
+  }
+
+  // jQuery code to trigger dropdown
+  $('.ui.dropdown')
+    .dropdown();
+
+
+  // JS for userAvatar
+  let userAvatar = document.querySelectorAll(".userAvatar");
+  let userImage = document.querySelector("#userImage");
+
+  for (let i = 0; i < userAvatar.length; i++) {
+    userAvatar[i].addEventListener("click", () => {
+      userImage.value = userAvatar[i].getAttribute("dataValue");
+    })
+  }
+
+
+  // JS for userFont
+  let userFont = document.querySelectorAll(".userFont");
+  let fontFamily = document.querySelector("#fontFamily");
+
+  for (let i = 0; i < userFont.length; i++) {
+    userFont[i].addEventListener("click", () => {
+      fontFamily.value = userFont[i].getAttribute("dataValue");
+    })
+  }
+
+
+  // JS code to get variables passed through res.render and set font and theme
+  let emptyDiv = document.querySelector("#empty-div");
+  let fontDiv = document.querySelector("#fontDiv");
+  let Theme;
+  let Font;
+  Theme = emptyDiv.innerHTML;
+  Font = fontDiv.innerHTML;
+  // console.log(Theme);
+  // console.log(Font);
+  document.querySelector(".mobile").style.background = `${Theme}`;
+  document.querySelector(".mobile").style.fontFamily = `${Font}`;
+
+
+  // JS code to change innerHTML of selcted theme to SELECTED
+  let colorBox = document.querySelectorAll(".color-box");
+  console.log(colorBox.length);
+
+  for (let i = 0; i < colorData.length; i++) {
+    if (Theme == colorData[i].background) {
+      console.log(Theme);
+      console.log(colorData[i].background);
+      colorBox[i].style.fontSize = "1.8rem";
+      colorBox[i].style.color = "white";
+      colorBox[i].innerHTML = "<p style='padding:4px;border:3px solid white;border-radius:6px;'> SELECTED</p>";
+    }
+  }
+
+
+  //JS code to enable click to copy userprofile link
+  function myFunction() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    // alert("Copied the text: " + copyText.value);
+
+    $('#copyBtn')
+      .toast({
+        class: 'success',
+        message: 'Copied to Clipboard'
+      })
+      ;
+  }
+
+  // Matching Reset Passwords
+  let password1 = document.getElementById("pass1");
+  let password2 = document.getElementById("pass2");
+  let resetBtn = document.getElementById("resetBtn");
+  let passStrongWarning = document.getElementById("passStrongWarning");
+  let passMatchWarning = document.getElementById("passMatchWarning");
+  const passField = document.querySelectorAll(".commonPass");
+
+  resetBtn.classList.add("disabled");
+
+  password1.addEventListener("keyup", () => {
+    checkPassword();
+  })
+  password2.addEventListener("keyup", () => {
+    checkPassword();
+  })
+
+  function checkPassword() {
+    if (password1.value.length != 0) {
+      // If password is 8 digits
+      if (password1.value.length >= 8) {
+        passMatch();
+        passStrongWarning.innerHTML = `
+                      <div class="ui positive message">
+                          <div class="header">New Password is strong enough</div>
+                      </div>`
+          ;
+
+      }
+
+      // If confirm password is not 8 digits
+      else if (password1.value.length < 8) {
+        passMatch();
+        passStrongWarning.innerHTML = `
+                      <div class="ui negative message">
+                          <div class="header">New Password not strong enough</div>
+                      </div>`
+          ;
+
+      }
+    }
+  }
+
+  function passMatch() {
+    if (password1.value.length != 0) {
+      // If Not same return False.     
+      if (password1.value == password2.value) {
+        // alert("Password Match: Welcome!") 
+        passField[0].classList.add("success");
+        passField[1].classList.add("success");
+        passField[0].classList.remove("error");
+        passField[1].classList.remove("error");
+        passMatchWarning.innerHTML = `
+                      <div class="ui positive message">
+                          <div class="header">New Passwords match</div>
+                      </div>`
+          ;
+        resetBtn.classList.remove("disabled");
+        return true;
+      }
+
+      // If same return True. 
+      else {
+        // alert ("\nPassword did not match: Please try again...") 
+        passField[0].classList.add("error");
+        passField[1].classList.add("error");
+        passField[0].classList.remove("success");
+        passField[1].classList.remove("success");
+        passMatchWarning.innerHTML = `
+                      <div class="ui negative message">
+                        <div class="header">New Passwords do not match</div>
+                        </div>`
+          ;
+        resetBtn.classList.add("disabled");
+        return false;
+      }
+    }
+  }
+
+  // JS code to set font size recieved from res.render
+  let myFontSize = document.querySelector("#fontHelp").innerHTML;
+  console.log(myFontSize);
+  // document.querySelector(".mobile").style.fontSize = `${myFontSize}`;
+  document.querySelector("#username").style.fontSize = `${myFontSize}`;
+
+  // JS code to show user added links recieved from res.render
+  let bottomContent = document.querySelectorAll(".bottom-content");
+
+  for (let i = 0; i < bottomContent.length; i++) {
+    bottomContent[i].style.fontSize = `${myFontSize}`;
+  }
+
+
+
+</script>
+
+</html>
