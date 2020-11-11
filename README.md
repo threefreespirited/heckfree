@@ -4,7 +4,7 @@
 
 [![GitHub forks](https://img.shields.io/github/forks/threefreespirited/heckfree?style=social&label=Fork&maxAge=2592000)](https://github.com/threefreespirited/heckfree)
 [![GitHub stars](https://img.shields.io/github/stars/threefreespirited/heckfree?style=social&label=Star&maxAge=2592000)](https://github.com/threefreespirited/heckfree)
-[![GitHub watchers](https://img.shields.io/github/watchersthreefreespirited/heckfree?style=social&label=Watch&maxAge=2592000)](https://github.com/threefreespirited/heckfree)
+[![GitHub watchers](https://img.shields.io/github/watchers/threefreespirited/heckfree?style=social&label=Watch&maxAge=2592000)](https://github.com/threefreespirited/heckfree)
 
 <h3 style="text-align:center;color:yellow;font-size:1.8rem;">Share One and Connect with Many</h3>
 <p style="text-align:center;font-size:1.5rem;">The only link you will ever need</p>
