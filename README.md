@@ -11,7 +11,7 @@
 
 <p style="font-size:1.3rem;">We're a tool for connecting followers to your entire online arena and manage all your links with ease.</p>
 <img src="1.png" style="margin-top:30px;" alt="image">
-<h2>Dashboard for manging User's Acccount</h2>
+<h2>Dashboard for managing User's Acccount</h2>
 <img src="Screenshot (59).png" style="margin-top:30px;" alt="image">
 <h2></h2>
 <h1 style="margin-top:40px;">Features</h1>
