@@ -100,7 +100,7 @@
   }
 
   .team-section .team-box .inner-box .image-box {
-    background-color: #5e81cf;
+    background-color: #f6f4e6;
     padding: 20px;
     position: relative;
     overflow: hidden;
@@ -162,7 +162,7 @@
     display: inline-block;
     height: 45px;
     width: 45px;
-    background-color: #f3b90c;
+    background-color: #5e81cf;
     text-align: center;
     line-height: 45px;
     font-size: 22px;
