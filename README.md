@@ -36,9 +36,13 @@
 <h1 style="margin-top:40px;">Our Team
 </h1>
 <span>
+  <a href="https://github.com/AMAN123956">
 <img src="https://avatars1.githubusercontent.com/u/56161073?s=60&v=4" style="width:70px;height:100px;border-radius:100%;">
-
+  </a>
+  <a href="https://github.com/me-harshit">
 <img src="https://avatars1.githubusercontent.com/u/47037260?s=48&v=4" style="width:70px;height:100px;border-radius:100%;margin-left:10px">
-
+  </a>
+  <a href="https://github.com/heysujal/">
 <img src="https://avatars0.githubusercontent.com/u/55016909?s=64&v=4" style="width:70px;height:100px;border-radius:100%;margin-left:10px;">
+  </a>
 </span>
