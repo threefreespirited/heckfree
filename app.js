@@ -542,14 +542,7 @@ app.get("/:myToken", (req, res) => {
       // console.log(depend);
     }
   })
-  Data.find({ username: paramToken }, async(err, data) => {
-    linksData = await data;
-    for(let i=0 ;i<linksData.length ; i++){
-       if(linksData[i].icon == " "){
-         linksData[i].icon ==  await "globe";
-         console.log(linksData[i].icon);
-    }} 
-    console.log(linksData);
+
     Appearance.find({ username: paramToken }, (err, data) => {
       appearanceData = data;
       // console.log(appearanceData);
@@ -562,7 +555,15 @@ app.get("/:myToken", (req, res) => {
           FontSize.find({ username: paramToken }, (err, data) => {
             fontSize = data;
             // console.log(fontSize, "fS");
-
+  Data.find({ username: paramToken }, async(err, data) => {
+    linksData = await data;
+    for(let i=0 ;i<linksData.length ; i++){
+       if(linksData[i].icon == " "){
+         linksData[i].icon ==  await "globe";
+         console.log(linksData[i].icon);
+    }} 
+    console.log(linksData);
+            
             // console.log("data is good");
             if (depend == 1) {
               res.render("profile", { name: paramToken, linksData: linksData, appearanceData: appearanceData, avatarData: avatarData, fontData: fontData, fontSize: fontSize , pageTitle});
