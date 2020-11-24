@@ -560,7 +560,7 @@ app.get("/:myToken", (req, res) => {
     for(let i=0 ; i< await data.length ; i++){
        if(data[i].icon == ''){
          console.log(data[i].icon , "data[i].icon");
-         data[i].icon ==  await 'globe';
+         data[i].icon = 'globe';
     }} 
         linksData = await data;
     console.log(linksData);
