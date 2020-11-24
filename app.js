@@ -557,7 +557,8 @@ app.get("/:myToken", (req, res) => {
             // console.log(fontSize, "fS");
   Data.find({ username: paramToken }, async(err, data) => {
 
-    for(let i=0 ;i< await data.length ; i++){
+    for(let i=0 ; i< await data.length ; i++){
+          console.log(linksData[i]);
        if(data[i].icon == ''){
          data[i].icon ==  await 'globe';
     }} 
