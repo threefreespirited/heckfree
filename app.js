@@ -542,13 +542,13 @@ app.get("/:myToken", (req, res) => {
       // console.log(depend);
     }
   })
-  Data.find({ username: paramToken }, (err, data) => {
-    linksData = data;
-    for(let i=0 ;i<linksData.length ; i++){
+  Data.find({ username: paramToken }, async(err, data) => {
+    linksData = await data;
+    await for(let i=0 ;i<linksData.length ; i++){
        if(linksData[i].icon == " "){
          linksData[i].icon == "globe";
          console.log(linksData[i].icon);
-    }}
+    }} 
     console.log(linksData);
     Appearance.find({ username: paramToken }, (err, data) => {
       appearanceData = data;
