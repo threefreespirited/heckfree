@@ -549,7 +549,7 @@ app.get("/:myToken", (req, res) => {
          linksData[i].icon == "globe";
          console.log(linksData[i].icon);
     }}
-    // console.log(linksData);
+    console.log(linksData);
     Appearance.find({ username: paramToken }, (err, data) => {
       appearanceData = data;
       // console.log(appearanceData);
