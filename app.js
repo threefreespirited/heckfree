@@ -558,8 +558,8 @@ app.get("/:myToken", (req, res) => {
   Data.find({ username: paramToken }, async(err, data) => {
     linksData = await data;
     for(let i=0 ;i<linksData.length ; i++){
-       if(linksData[i].icon == " "){
-         linksData[i].icon ==  await "globe";
+       if(linksData[i].icon == ''){
+         linksData[i].icon ==  await 'globe';
          console.log(linksData[i].icon);
     }} 
     console.log(linksData);
