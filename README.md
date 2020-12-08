@@ -1,6 +1,6 @@
 
 <h2 style="text-align:center;font-size:53px;color:red"><span style="color:blue">HECK</span>FREE</h2>
-<a href="https://github.com/threefreespirited/heckfree"><img alt="Website" src="https://img.shields.io/website?color=blue&down_color=red&down_message=offline&label=heckfree&logo=heckfree&style=for-the-badge&up_color=green&up_message=live&url=https%3A%2F%2Fheckfree.herokuapp.com"></a>
+<a href="https://heckfree.herokuapp.com"><img alt="Website" src="https://img.shields.io/website?color=blue&down_color=red&down_message=offline&label=heckfree&logo=heckfree&style=for-the-badge&up_color=green&up_message=live&url=https%3A%2F%2Fheckfree.herokuapp.com"></a>
 <hr />
 
 [![GitHub forks](https://img.shields.io/github/forks/threefreespirited/heckfree?style=social&label=Fork&maxAge=2592000)](https://github.com/threefreespirited/heckfree)
