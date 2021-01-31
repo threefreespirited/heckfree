@@ -46,6 +46,8 @@
 <img src="https://avatars0.githubusercontent.com/u/55016909?s=64&v=4" style="width:70px;height:100px;border-radius:100%;margin-left:10px;">
   </a>
 </span>
+<hr />
+<br />
 <br />
 ## Environment Setup-
 
