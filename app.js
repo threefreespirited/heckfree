@@ -228,7 +228,7 @@ app.post('/passwordreset', function (req, res) {
   
   <div style="height:100%; width:600px;font-size: 1.2rem;text-align:center;padding:30px;">
   <a href="/" style="padding: 0;">
-<img src="https://heckfree.herokuapp.com/img/logo.png" style="width:40px;border-radius:60%;float:left;">
+<img src="https://heckfree.onrender.com/img/logo.png" style="width:40px;border-radius:60%;float:left;">
 </a>
 <br>
 <br>
@@ -236,10 +236,10 @@ app.post('/passwordreset', function (req, res) {
   This link will expire within 15 minutes.
   </p>
   <p>
-  <a target="_blank" style="text-decoration:none; background-color: black; border: black 1px solid; color: #fff; padding:10px 10px; display:block;" href="https://heckfree.herokuapp.com/resetpassword/${token}">
+  <a target="_blank" style="text-decoration:none; background-color: black; border: black 1px solid; color: #fff; padding:10px 10px; display:block;" href="https://heckfree.onrender.com/resetpassword/${token}">
   <strong>Reset Password</strong></a>
   </p>
-  <p style="text-align:left">This link can only be used once. If you need to reset your password again, please visit <a href="https://heckfree.herokuapp.com">heckfree.herokuapp.com</a> and request another reset.<br><br>If you did not make this request, you can simply ignore this email.</p>
+  <p style="text-align:left">This link can only be used once. If you need to reset your password again, please visit <a href="https://heckfree.onrender.com">https://heckfree.onrender.com/</a> and request another reset.<br><br>If you did not make this request, you can simply ignore this email.</p>
   <p style="text-align:left">
   Sincerely,<br>Heckfree Team
   </p>
